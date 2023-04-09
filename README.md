@@ -1,1 +1,1 @@
-learning rust examples
+learning go examples
