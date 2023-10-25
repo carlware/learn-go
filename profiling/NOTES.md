@@ -65,3 +65,22 @@ hide=
 granularity=functions
 top
 ```
+
+```
+hide=runtime
+focus=math
+top
+web
+```
+
+```
+http://localhost:6060/debug/pprof/
+go tool pprof http://localhost:6060/debug/pprof/profile
+go tool pprof -http=:8080 http://localhost:6060/debug/pprof/profile
+go tool pprof -http=:8080 http://localhost:6060/debug/pprof/heap
+go tool pprof -http=:8080 http://localhost:6060/debug/pprof/profile?seconds=10
+
+go tool pprof -http=:8080 http://localhost:6060/debug/pprof/allocs
+go tool pprof -http=:8080 http://localhost:6060/debug/pprof/block
+go tool pprof -http=:8080 http://localhost:6060/debug/pprof/mutex
+```
