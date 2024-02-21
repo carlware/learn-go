@@ -34,10 +34,11 @@ func main() {
 func t1(ctx context.Context) <-chan string {
 	strChan := make(chan string)
 	go func() {
+	outer:
 		for _, m := range []string{"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"} {
 			select {
 			case <-ctx.Done():
-				break
+				break outer
 			default:
 				time.Sleep(time.Duration(rand.Intn(500)) * time.Millisecond)
 				fmt.Printf("Sending %s message %s\n", time.Now().Format(dateLayout), m)
